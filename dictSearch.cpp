@@ -1,7 +1,5 @@
-
-//
 #include "Trie.h"
-//
+#include "getTime.h"
 
 #include <iostream>
 #include <fstream>
@@ -33,13 +31,16 @@ int main(int argc, char const *argv[]) {
   int i = 0;
 
   cout << "Reading File.";
+  uint64 begin = GetTimeMs64();
   while (getline(in, line)) {
     if(i++ % 100000 == 0) {
       cout << ".";
     }
     words.insert(line);
   }
+  uint64 end = GetTimeMs64();
   cout << endl << "Done!" << endl;
+  cout << "Time elapsed: " << (end - begin) << "ms" << endl;
 
   //Getting user input
   while(true) {
@@ -52,8 +53,10 @@ int main(int argc, char const *argv[]) {
     }
 
     cout << endl << "Printing all words beggining with " << userInput << ":" << endl;
+    begin = GetTimeMs64();
     words.printFromPrefix(userInput);
-    cout << endl << "(^C to exit)" << endl;
+    end = GetTimeMs64();
+    cout << endl << "Time elapsed: " << (end - begin) << "ms" << endl << "(^C to exit)" << endl;
   }
 
   return 0;
