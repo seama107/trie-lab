@@ -49,3 +49,7 @@ You may work in pairs.
 ## Outside code
 The 'getTime.h' file is a code snippet written by Andreas Bonini on Stack Overflow. I used this instead of <chrono> just because I wanted support for machines without c++11.
 http://stackoverflow.com/questions/1861294/how-to-calculate-execution-time-of-a-code-snippet-in-c
+
+All other code was written by me.
+- Michael Seaman
+
